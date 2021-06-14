@@ -50,7 +50,7 @@ public class Practica2 {
     public void EscogerCliente(){
         MostrarCliente();
         int seleccion;
-        System.out.println("Seleccione Cliente:");
+        System.out.println("Seleccione el cliente:");
         seleccion = sc.nextInt();
         for (int i = 0; i < posicionCliente; i++) {
             if (seleccion == IdCliente[i]) {
@@ -63,14 +63,13 @@ public class Practica2 {
     public void EscogerPelicula(){
          int seleccion;
          MostrarPelicula();
-        System.out.println("Seleccione Pelicula:");
+        System.out.println("Seleccione su pelicula:");
         seleccion = sc.nextInt();
         for (int i = 0; i < posiciones; i++) {
             if (seleccion == IdPelicula[i]) {
-                System.out.println(NombrePelicula[i] + "Prestada");
+                System.out.println(NombrePelicula[i] + " ya se presto");
                 Disponible[i] = false;
                 PrestamoCliente[i] = true;
-                
             }
         }
     }
@@ -109,6 +108,7 @@ public class Practica2 {
     }
 
     public void OrdenarPelicula(){
+       
         System.out.println("Las peliculas ordenandas de manera ascendente son:");
         peliculasAgregadas();
     }
@@ -148,6 +148,8 @@ public class Practica2 {
         Tel[2] = "14725836";
         PrestamoPelicula[2] = false;
         contaCliente++;
+
+        
     }
 
 
@@ -167,7 +169,7 @@ public class Practica2 {
     }
     
     public void Reportes(){
-        System.out.print("La cantidad de peliculas por categoria son:"+ contaCliente);
+        System.out.print("La cantidad de peliculas por categoria son:"+ posicionCliente);
         System.out.print("\n\n");
         System.out.print("Las peliculas de una categoria se encuentran en la posicion: "+ posiciones);
         System.out.print("\n\n");
@@ -175,7 +177,7 @@ public class Practica2 {
         System.out.print("\n\n");
         System.out.print("Pelicula mas prestada se encuentra en la posicion: "+ posiciones);
         System.out.print("\n\n");
-        System.out.print("Pelicula menos prestada se encuentra en la posicion:"+ contaCliente);
+        System.out.print("Pelicula menos prestada se encuentra en la posicion:"+ posicionCliente);
     }
 
     public void MasPrestada(){
@@ -197,16 +199,14 @@ public class Practica2 {
         Categoria[posiciones] = sc.next();
     }
 
-    
 
     public void Menu() {
         boolean salir = false;
         int opcion;
 
         while (!salir) {
-
-            System.out.print("BIENVENIDO A BLOCKBOSTERGT");
             System.out.print("\n\n");
+            System.out.print("BIENVENIDO A BLOCKBOSTERGT");
             System.out.print("\n\n");
             System.out.print("\nQue accion desea realizar?\n");
             System.out.print("\n\n");
@@ -231,7 +231,6 @@ public class Practica2 {
 
                 case 2:
                 DevolverPeli();
-                   
                     break;
 
                 case 3:
